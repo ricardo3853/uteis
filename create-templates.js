@@ -30,12 +30,12 @@ if (!fs.existsSync(theme)){
 function gerarFuncao(name,path){
 comentario="<?php "+"\n\n";
 	comentario+=`$`+name+` = new Create_Admin_tela();
-		$curso->single_name="`+name+`";
-		$curso->plural_name="`+name+`s";	
-		$curso->support = array('title','editor','thumbnail');
-		$curso->menu_icons="dashicons-megaphone";
+		$`+name+`->single_name="`+name+`";
+		$`+name+`->plural_name="`+name+`s";	
+		$`+name+`->support = array('title','editor','thumbnail');
+		$`+name+`->menu_icons="dashicons-megaphone";
 		$dados=array("Importante"=>"Importante","Normal"=>"Normal","Aviso"=>"Aviso");
-		$fieldsCurso=array(
+		$fields`+name+`=array(
 			array('id'=>'`+name+`_link',
 				  'title'=>'Link',
 				  'object_type'=>'input',
@@ -51,7 +51,8 @@ comentario="<?php "+"\n\n";
 				'context'=>'side',
 				'filter'=>true,
 				'priority'=>'high'),		
-		);`;
+		); 
+$`+name+`->createCP();`;
 
 	createFile(path+"/function-"+name+'.php',comentario);
 }
@@ -107,7 +108,7 @@ function single(name,path){
 							do_action( 'virtue_single_post_content_before' );
 		                        $link  = get_post_meta( $post->ID, 'link', true );
 		                        echo $link;
-								//the_content(); 
+								the_content(); 
 		                      
 							do_action( 'virtue_single_post_content_after' );
 							?>

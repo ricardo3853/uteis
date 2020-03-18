@@ -1,6 +1,6 @@
 <?php
 		/*
-		Template Name: couro
+		Template Name: teste
 		*/
 		 global $post, $virtue_sidebar;
 
@@ -44,16 +44,16 @@
 						$wp_query = null; 
 						$wp_query = new WP_Query();
 						$wp_query->query( array(				 
-							'post_type'	 => 'couro' 
+							'post_type'	 => 'teste' 
 							)
 						);
-		   			 //$loop = new WP_Query( array( 'post_type' => 'couro' ) );
+		   			 //$loop = new WP_Query( array( 'post_type' => 'teste' ) );
 						if ( $wp_query ) : 
 							while ( $wp_query->have_posts() ) : $wp_query->the_post();
 						 		if( $summery == 'full' ) {
-										get_template_part( 'admin/templates/couro/content', 'fullpost' ); 
+										get_template_part( 'admin/templates/teste/content', 'fullpost' ); 
 								} else {
-										get_template_part( 'admin/templates/couro/content', get_post_format() ); 
+										get_template_part( 'admin/templates/teste/content', get_post_format() ); 
 								}
 							endwhile; 
 						else: ?>

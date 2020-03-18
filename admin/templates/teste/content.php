@@ -169,7 +169,7 @@
             } ?>
 
             <div class="<?php echo esc_attr( $textsize );?> post-text-container postcontent">
-                <?php  get_template_part('admin/templates/couro/prioridade'); ?> 
+                <?php  get_template_part('admin/templates/teste/prioridade'); ?> 
                 <header>
                     <a href="<?php the_permalink() ?>">
                         <h2 class="entry-title" itemprop="name headline">
